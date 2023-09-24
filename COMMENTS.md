@@ -1,0 +1,26 @@
+- compte rendu :
+  - durée du test technique : environ 1h30
+  - utilisation de la librairie d'icones Material Design Icons
+  
+  - pour le logo, j'ai utilisé l'icone "polymer" de Material
+  - General Sans en police de caractères
+  - j'avais déjà de l'expérience avec l'API de TMDB donc j'ai pu facilement trouver où récupérer les films en tendances, les catégories, etc...
+  - j'ai utilisé Axios pour les appels à l'API
+  - pour le routing, j'ai utilisé Vue Router
+  - pour la page principale, j'ai mis Blade Runner 2049 comme "film du jour" en hero section, avec un gradient linéaire latéral pour pouvoir bien lire le texte
+  - pour enregister les films favoris, j'ai fait un store basique avec Pinia, avec un array d'ids de films et deux actions pour ajouter ou supprimer un film de la liste
+  - j'y ai passé un peu plus de temps que prévu, parce que j'utilise encore vuex@next dans mes projets par vieille habitude
+  - j'ai utilisé "pinia-plugin-persistedstate" pour sauvegarder les favoris dans le localStorage
+  - pour la page catalogue, j'ai commencé par faire une page assez classique aevc des tabs aux chemins différents dans le router (/catalogue/:tabName) puis j'ai changé d'avis et je me suis replié sur une interface plus similaire à celle de Netflix avec des catégories horizontales scrollables. j'ai mis des flèches de navigation pour les ordinateurs où le scroll horizontal n'est pas intuitif
+  - je n'ai finalement eu à utiliser que deux composants : un pour le header (Header.vue) et un autre pour les films (Movie.vue), avec deux props: une pour les données et une autre pour le nombre de films à afficher par ligne
+  - j'ai ajouté un skeleton loader pour le composant Movie, pour éviter que les films ne se déplacent quand les images se chargent
+  - les backdrops des films sont choisis aléatoirement à chaque chargement
+  - les logos des films ne s'affichent que sur la page d'accueil et la page des favoris pour éviter de surcharger la page catalogue d'appels à la API
+  - je me suis senti plus à l'aise à faire le style en SCSS qu'en Tailwind, 
+
+  - idées d'amélioration :
+    - rendre le site responsive, en utilisant les posters des films plutôt que les backdrops pour les écrans plus petits
+    - ajouter un système de lazy-loading sur la page catalogue pour éviter de charger toutes les images cachées dans les carousels
+    - ajouter une page de détails pour chaque film, avec un synopsis, la liste des acteurs, la durée, etc...
+    - ajouter une fonction de recherche
+    - déplacer une grande partie de la logique d'interaction avec TMDB en back-end pour éviter de surcharger le front-end, notamment quant il s'agit de récupérer tous les backdrops, images et crédits des films
