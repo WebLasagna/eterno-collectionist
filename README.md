@@ -1,4 +1,4 @@
-# Test technique Le Collectionist
+# Eterno - Test technique Le Collectionist
 
 - Ajouter une clé d'API TMDB dans le fichier `.env`
 
